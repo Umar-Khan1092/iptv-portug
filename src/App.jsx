@@ -95,7 +95,14 @@ const HeroSection = ({ setActiveTab }) => {
         </div>
         <div className="flex-1 relative">
           <div className="relative z-10 rounded-[3rem] overflow-hidden border-2 border-white/10 shadow-[0_0_50px_rgba(255,140,0,0.2)]">
-             <img src="https://images.unsplash.com/photo-1593305841991-05c297ba4575?auto=format&fit=crop&q=80&w=1200" alt="IPTVPORTUGAL Streaming 4K 8K" className="w-full h-auto" />
+             <img 
+               src="https://images.unsplash.com/photo-1593305841991-05c297ba4575?auto=format&fit=crop&q=80&w=800" 
+               alt="IPTVPORTUGAL Streaming 4K 8K" 
+               className="w-full h-auto" 
+               width="800" 
+               height="450" 
+               fetchpriority="high"
+             />
              <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-transparent to-transparent"></div>
              <div className="absolute bottom-8 left-8 right-8 p-6 glass rounded-[2rem] flex items-center justify-between border-white/20">
                 <div>
@@ -233,7 +240,7 @@ const GuideSection = ({ isFullView }) => {
           {activationSafe.map((step, i) => (
             <div key={i} className="flex flex-col items-center">
               <div className={`w-20 h-20 rounded-3xl ${['grad-pink-orange', 'grad-aqua-turquoise', 'grad-indigo-pink'][i] || 'grad-pink-orange'} flex items-center justify-center mb-8 text-white font-black text-3xl shadow-xl`}>{i+1}</div>
-              <h4 className="text-xl font-bold text-white mb-4 uppercase">{step.title}</h4>
+              <h3 className="text-xl font-bold text-white mb-4 uppercase">{step.title}</h3>
               <p className="text-sm text-slate-300 leading-relaxed font-medium">{step.desc}</p>
             </div>
           ))}
@@ -263,7 +270,7 @@ const SportsSection = ({ isFullView }) => {
                 <motion.div key={i} whileHover={{ x: 10 }} className="flex gap-6 p-6 rounded-3xl bg-white/[0.02] border border-white/5 hover:bg-white/[0.04] transition-all">
                   <div className={`w-14 h-14 rounded-2xl ${grads[i] || 'grad-red-light'} flex items-center justify-center flex-shrink-0 text-white shadow-lg`}><Trophy size={28} /></div>
                   <div>
-                    <h4 className="font-black text-white text-xl mb-2 uppercase">{item.title}</h4>
+                    <h3 className="font-black text-white text-xl mb-2 uppercase">{item.title}</h3>
                     <p className="text-slate-300 font-medium">{item.desc}</p>
                   </div>
                 </motion.div>
@@ -273,12 +280,26 @@ const SportsSection = ({ isFullView }) => {
         </div>
         <div className="flex-1 grid grid-cols-2 gap-6">
           <div className="space-y-6">
-            <img src="https://images.unsplash.com/photo-1508098682722-e99c43a406b2?auto=format&fit=crop&q=80&w=600" className="rounded-[2.5rem] h-72 w-full object-cover shadow-2xl border-2 border-white/5" alt="Sports 1" />
+            <img 
+              src="https://images.unsplash.com/photo-1508098682722-e99c43a406b2?auto=format&fit=crop&q=80&w=600" 
+              className="rounded-[2.5rem] h-72 w-full object-cover shadow-2xl border-2 border-white/5" 
+              alt="Sports Live Action" 
+              width="600" 
+              height="300" 
+              loading="lazy"
+            />
             <div className="h-40 rounded-[2.5rem] grad-pink-orange flex items-center justify-center p-8 text-center border-2 border-white/10"><p className="font-black text-white text-2xl tracking-tighter uppercase leading-tight">LIVE THE PASSION</p></div>
           </div>
           <div className="space-y-6 pt-12">
             <div className="h-40 rounded-[2.5rem] glass flex items-center justify-center border-white/10 shadow-2xl"><PlayCircle size={64} className="text-orange-500" /></div>
-            <img src="https://images.unsplash.com/photo-1540747913346-19e32dc3e97e?auto=format&fit=crop&q=80&w=600" className="rounded-[2.5rem] h-72 w-full object-cover shadow-2xl border-2 border-white/5" alt="Arena" />
+            <img 
+              src="https://images.unsplash.com/photo-1540747913346-19e32dc3e97e?auto=format&fit=crop&q=80&w=600" 
+              className="rounded-[2.5rem] h-72 w-full object-cover shadow-2xl border-2 border-white/5" 
+              alt="Stadium Arena" 
+              width="600" 
+              height="300" 
+              loading="lazy"
+            />
           </div>
         </div>
       </div>
@@ -326,7 +347,7 @@ const PolicySection = ({ policyId }) => {
         <div className={`w-20 h-20 rounded-3xl ${grad} flex items-center justify-center mx-auto mb-8 text-white shadow-2xl`}>
           <Icon size={40} />
         </div>
-        <h1 className="text-4xl lg:text-6xl mb-6 text-white font-black uppercase tracking-tighter">{t(`policies.${policyId}.title`)}</h1>
+        <h2 className="text-4xl lg:text-6xl mb-6 text-white font-black uppercase tracking-tighter">{t(`policies.${policyId}.title`)}</h2>
       </div>
       <div className="glass p-12 rounded-[3rem] border-white/10 space-y-12">
         {contentSafe.map((section, idx) => (
@@ -364,7 +385,7 @@ const FinalCTASection = () => {
 const DeviceBox = ({ icon: Icon, title, desc, grad, mt, nmt }) => (
   <div className={`p-8 rounded-[2.5rem] glass flex flex-col gap-5 border-white/10 shadow-2xl relative group overflow-hidden ${mt ? 'mt-10' : ''} ${nmt ? '-mt-10' : ''}`}>
     <div className={`w-14 h-14 rounded-2xl ${grad} flex items-center justify-center text-white shadow-lg`}><Icon size={32} /></div>
-    <h4 className="text-xl font-bold text-white uppercase">{title}</h4>
+    <h3 className="text-xl font-bold text-white uppercase">{title}</h3>
     <p className="text-xs text-slate-400 font-medium">{desc}</p>
     <div className={`absolute inset-0 ${grad} opacity-0 group-hover:opacity-[0.03] transition-opacity`}></div>
   </div>
@@ -440,10 +461,14 @@ const Navbar = ({ activeTab, setActiveTab }) => {
   return (
     <nav className="fixed w-full z-50 transition-all duration-300 glass top-0">
       <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
-        <div onClick={() => handleNavClick('home')} className="flex items-center gap-2 group cursor-pointer">
+        <button 
+          onClick={() => handleNavClick('home')} 
+          aria-label="IPTV Portugal Home"
+          className="flex items-center gap-2 group cursor-pointer focus:outline-none"
+        >
           <div className="w-10 h-10 grad-pink-orange rounded-xl flex items-center justify-center shadow-lg shadow-orange-500/20 group-hover:scale-110 transition-transform"><Zap className="text-white" size={24} /></div>
           <span className="text-2xl font-black font-['Outfit'] tracking-tighter text-white uppercase">IPTV<span className="text-grad-pink-orange">PORTUGAL</span></span>
-        </div>
+        </button>
 
         <div className="hidden md:flex items-center gap-8 font-semibold text-sm">
           {navItems.map((item) => (
@@ -451,15 +476,31 @@ const Navbar = ({ activeTab, setActiveTab }) => {
               {item.label}
             </button>
           ))}
-          <button onClick={toggleLanguage} className="flex items-center gap-2 px-3 py-1.5 rounded-full border border-white/20 hover:bg-white/10 transition-all uppercase text-[10px] font-bold tracking-widest text-white">
+          <button 
+            onClick={toggleLanguage} 
+            aria-label={`Switch language to ${i18n.language === 'en' ? 'Portuguese' : 'English'}`}
+            className="flex items-center gap-2 px-3 py-1.5 rounded-full border border-white/20 hover:bg-white/10 transition-all uppercase text-[10px] font-bold tracking-widest text-white"
+          >
             <Globe size={14} className="text-orange-400" /> {i18n.language === 'en' ? 'PT' : 'EN'}
           </button>
           <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer" className="btn-primary py-2.5 px-6 text-sm uppercase tracking-wider">{t('nav.cta')}</a>
         </div>
 
         <div className="flex items-center gap-4 md:hidden">
-          <button onClick={toggleLanguage} className="p-2 glass rounded-lg text-white"><Globe size={20} className="text-orange-400" /></button>
-          <button className="text-white" onClick={() => setIsOpen(!isOpen)}>{isOpen ? <X size={28} /> : <Menu size={28} />}</button>
+          <button 
+            onClick={toggleLanguage} 
+            aria-label="Change Language"
+            className="p-2 glass rounded-lg text-white"
+          >
+            <Globe size={20} className="text-orange-400" />
+          </button>
+          <button 
+            className="text-white p-2" 
+            aria-label={isOpen ? "Close Menu" : "Open Menu"}
+            onClick={() => setIsOpen(!isOpen)}
+          >
+            {isOpen ? <X size={28} /> : <Menu size={28} />}
+          </button>
         </div>
       </div>
 
@@ -557,10 +598,14 @@ function App() {
       <footer className="pt-20 pb-12 px-8 border-t border-white/10 bg-black/40 relative overflow-hidden">
         <div className="max-w-7xl mx-auto grid md:grid-cols-4 gap-16 mb-20 relative z-10">
           <div className="col-span-1 md:col-span-2">
-            <div onClick={() => handleTabChange('home')} className="flex items-center gap-3 mb-8 group cursor-pointer w-fit">
+            <button 
+              onClick={() => handleTabChange('home')} 
+              aria-label="IPTV Portugal Home Footer"
+              className="flex items-center gap-3 mb-8 group cursor-pointer w-fit focus:outline-none"
+            >
               <div className="w-12 h-12 grad-pink-orange rounded-xl flex items-center justify-center text-white shadow-lg group-hover:scale-110 transition-transform"><Zap size={32} /></div>
               <span className="text-3xl font-black font-['Outfit'] tracking-tighter text-white uppercase">IPTV<span className="text-grad-pink-orange">PORTUGAL</span></span>
-            </div>
+            </button>
             <p className="text-slate-300 max-w-md leading-relaxed text-lg font-medium italic">
               "Providing Ultra HD streaming experiences with unmatched server stability for the Portuguese market since 2018."
             </p>
