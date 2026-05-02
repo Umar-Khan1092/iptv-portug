@@ -441,7 +441,7 @@ const Navbar = ({ activeTab, setActiveTab }) => {
     <nav className="fixed w-full z-50 transition-all duration-300 glass top-0">
       <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
         <div onClick={() => handleNavClick('home')} className="flex items-center gap-2 group cursor-pointer">
-          <div className="w-10 h-10 grad-pink-orange rounded-xl flex items-center justify-center shadow-lg shadow-orange-500/20 group-hover:scale-110 transition-transform"><PlayCircle className="text-white" size={24} /></div>
+          <div className="w-10 h-10 grad-pink-orange rounded-xl flex items-center justify-center shadow-lg shadow-orange-500/20 group-hover:scale-110 transition-transform"><Zap className="text-white" size={24} /></div>
           <span className="text-2xl font-black font-['Outfit'] tracking-tighter text-white uppercase">IPTV<span className="text-grad-pink-orange">PORTUGAL</span></span>
         </div>
 
@@ -558,7 +558,7 @@ function App() {
         <div className="max-w-7xl mx-auto grid md:grid-cols-4 gap-16 mb-20 relative z-10">
           <div className="col-span-1 md:col-span-2">
             <div onClick={() => handleTabChange('home')} className="flex items-center gap-3 mb-8 group cursor-pointer w-fit">
-              <div className="w-12 h-12 grad-pink-orange rounded-xl flex items-center justify-center text-white shadow-lg group-hover:scale-110 transition-transform"><PlayCircle size={32} /></div>
+              <div className="w-12 h-12 grad-pink-orange rounded-xl flex items-center justify-center text-white shadow-lg group-hover:scale-110 transition-transform"><Zap size={32} /></div>
               <span className="text-3xl font-black font-['Outfit'] tracking-tighter text-white uppercase">IPTV<span className="text-grad-pink-orange">PORTUGAL</span></span>
             </div>
             <p className="text-slate-300 max-w-md leading-relaxed text-lg font-medium italic">
