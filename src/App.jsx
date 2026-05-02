@@ -38,8 +38,8 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { useTranslation, Trans } from 'react-i18next';
 
 // --- Constants ---
-const WHATSAPP_NUMBER = "+32 460 20 27 33";
-const WHATSAPP_URL = "https://wa.me/32460202733";
+const WHATSAPP_NUMBER = "+44 7988 579524";
+const WHATSAPP_URL = "https://wa.me/447988579524?text=Hi%20iptvportugal.pro";
 
 // --- SEO Schema Component ---
 const SchemaMarkup = () => {

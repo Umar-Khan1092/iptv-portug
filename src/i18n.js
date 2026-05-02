@@ -133,7 +133,7 @@ const resources = {
             { "h": "6. Service Availability", "p": "We aim to provide stable service, but we do not guarantee uninterrupted streaming. Service may be affected by internet connection, device compatibility, or server maintenance." },
             { "h": "7. Termination", "p": "We reserve the right to suspend or terminate accounts if terms are violated or misuse is detected." },
             { "h": "8. Changes to Terms", "p": "We may update these terms at any time. Continued use of the service means you accept updated terms." },
-            { "h": "9. Contact", "p": "📱 WhatsApp: +32 460 20 27 33" }
+            { "h": "9. Contact", "p": "📱 WhatsApp: +44 7988 579524" }
           ]
         },
         "privacy": {
@@ -147,7 +147,7 @@ const resources = {
             { "h": "6. User Rights (GDPR)", "p": "You have the right to access, correct, delete, or request data portability." },
             { "h": "7. Data Retention", "p": "We keep data only as long as necessary for service operation and legal compliance." },
             { "h": "8. Updates", "p": "Policy may change over time. Continued use means acceptance." },
-            { "h": "9. Contact", "p": "📱 WhatsApp: +32 460 20 27 33" }
+            { "h": "9. Contact", "p": "📱 WhatsApp: +44 7988 579524" }
           ]
         },
         "refund": {
@@ -180,7 +180,7 @@ const resources = {
             { "h": "3. Action Taken", "p": "We may remove content, suspend accounts, or investigate claims." },
             { "h": "4. Counter Claims", "p": "Users can submit counter-notice if content was removed wrongly." },
             { "h": "5. Repeat Violations", "p": "Repeated violations result in permanent bans." },
-            { "h": "6. Contact", "p": "📱 WhatsApp: +32 460 20 27 33" }
+            { "h": "6. Contact", "p": "📱 WhatsApp: +44 7988 579524" }
           ]
         }
       },
@@ -323,7 +323,7 @@ const resources = {
             { "h": "6. Disponibilidade do Serviço", "p": "Pretendemos fornecer um serviço estável, mas não garantimos streaming ininterrupto." },
             { "h": "7. Rescisão", "p": "Reservamo-nos o direito de suspender ou encerrar contas se os termos forem violados." },
             { "h": "8. Alterações nos Termos", "p": "Podemos atualizar estes termos a qualquer momento." },
-            { "h": "9. Contacto", "p": "📱 WhatsApp: +32 460 20 27 33" }
+            { "h": "9. Contacto", "p": "📱 WhatsApp: +44 7988 579524" }
           ]
         },
         "privacy": {
@@ -337,7 +337,7 @@ const resources = {
             { "h": "6. Direitos do Utilizador (GDPR)", "p": "Você tem o direito de aceder, corrigir ou apagar os seus dados." },
             { "h": "7. Retenção de Dados", "p": "Mantemos os dados apenas pelo tempo necessário." },
             { "h": "8. Atualizações", "p": "A política pode mudar com o tempo." },
-            { "h": "9. Contacto", "p": "📱 WhatsApp: +32 460 20 27 33" }
+            { "h": "9. Contacto", "p": "📱 WhatsApp: +44 7988 579524" }
           ]
         },
         "refund": {
@@ -370,7 +370,7 @@ const resources = {
             { "h": "3. Ação Tomada", "p": "Podemos remover conteúdo ou suspender contas." },
             { "h": "4. Contra-reclamações", "p": "Utilizadores podem enviar contra-notificação." },
             { "h": "5. Violações Repetidas", "p": "Resultam em banimentos permanentes." },
-            { "h": "6. Contacto", "p": "📱 WhatsApp: +32 460 20 27 33" }
+            { "h": "6. Contacto", "p": "📱 WhatsApp: +44 7988 579524" }
           ]
         }
       },
