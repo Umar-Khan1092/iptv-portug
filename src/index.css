@@ -1,0 +1,63 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: dark;
+}
+
+@layer base {
+  body {
+    @apply bg-[#0f0e17] text-slate-200 overflow-x-hidden;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-['Outfit'] font-bold text-white tracking-tight;
+  }
+}
+
+@layer components {
+  .glass {
+    @apply bg-white/[0.03] backdrop-blur-xl border border-white/10 shadow-2xl;
+  }
+  
+  .btn-primary {
+    @apply px-8 py-4 bg-gradient-to-r from-[#ff0080] to-[#ff8c00] text-white rounded-full font-black shadow-lg shadow-orange-500/20 hover:shadow-orange-500/40 hover:scale-105 transition-all duration-300 flex items-center justify-center gap-2;
+  }
+
+  .section-padding {
+    @apply py-24 px-6 lg:px-12 max-w-7xl mx-auto;
+  }
+
+  /* Custom Gradients */
+  .grad-pink-orange { @apply bg-gradient-to-r from-[#ff0080] to-[#ff8c00]; }
+  .grad-yellow-brown { @apply bg-gradient-to-r from-[#ffea00] to-[#8b4513]; }
+  .grad-indigo-pink { @apply bg-gradient-to-r from-[#4b0082] to-[#ff1493]; }
+  .grad-red-light { @apply bg-gradient-to-r from-[#e60000] to-[#ff4d4d]; }
+  .grad-saphire-cobalt { @apply bg-gradient-to-r from-[#0f52ba] to-[#0047ab]; }
+  .grad-aqua-turquoise { @apply bg-gradient-to-r from-[#00ffff] to-[#40e0d0]; }
+
+  .text-grad-pink-orange {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-[#ff0080] to-[#ff8c00];
+  }
+}
+
+.bg-gradient-mesh {
+  background-color: #0f0e17;
+  background-image: 
+    radial-gradient(at 0% 0%, hsla(273, 98%, 10%, 1) 0, transparent 50%), 
+    radial-gradient(at 100% 0%, hsla(200, 98%, 10%, 1) 0, transparent 50%), 
+    radial-gradient(at 50% 100%, hsla(330, 98%, 10%, 1) 0, transparent 50%);
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-[#0f0e17];
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-orange-500/30 rounded-full hover:bg-orange-500/50 transition-colors;
+}
