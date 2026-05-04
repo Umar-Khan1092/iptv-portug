@@ -1,4 +1,4 @@
-import React, { useState, useEffect, Suspense, lazy } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Helmet } from 'react-helmet-async';
 import { 
   CheckCircle2, 
@@ -119,14 +119,7 @@ const HeroSection = ({ setActiveTab }) => {
   );
 };
 
-const PricingSection = lazy(() => import('./components/AllSections').then(m => ({ default: m.PricingSection })));
-const FeaturesSection = lazy(() => import('./components/AllSections').then(m => ({ default: m.FeaturesSection })));
-const DevicesSection = lazy(() => import('./components/AllSections').then(m => ({ default: m.DevicesSection })));
-const GuideSection = lazy(() => import('./components/AllSections').then(m => ({ default: m.GuideSection })));
-const SportsSection = lazy(() => import('./components/AllSections').then(m => ({ default: m.SportsSection })));
-const FAQSection = lazy(() => import('./components/AllSections').then(m => ({ default: m.FAQSection })));
-const PolicySection = lazy(() => import('./components/AllSections').then(m => ({ default: m.PolicySection })));
-const FinalCTASection = lazy(() => import('./components/AllSections').then(m => ({ default: m.FinalCTASection })));
+import { PricingSection, FeaturesSection, DevicesSection, GuideSection, SportsSection, FAQSection, PolicySection, FinalCTASection } from './components/AllSections';
 
 // --- Navbar ---
 
@@ -264,29 +257,27 @@ function App() {
       <Navbar activeTab={activeTab} setActiveTab={handleTabChange} />
 
       <main className="flex-grow bg-gradient-mesh relative">
-        <Suspense fallback={<div className="min-h-[50vh] flex items-center justify-center"><div className="w-8 h-8 border-4 border-orange-500 border-t-transparent rounded-full animate-spin"></div></div>}>
-          {activeTab === 'home' ? (
-            <div className="animate-fade-in-up">
-              <HeroSection setActiveTab={handleTabChange} />
-              <PricingSection isFullView={true} />
-              <FeaturesSection isFullView={true} />
-              <DevicesSection isFullView={true} />
-              <GuideSection isFullView={true} />
-              <SportsSection isFullView={true} />
-              <FAQSection isFullView={true} />
-              <FinalCTASection />
-            </div>
-          ) : (
-            <div key={activeTab} className="animate-fade-in-up">
-              {activeTab === 'pricing' && <PricingSection isFullView={false} />}
-              {activeTab === 'features' && <FeaturesSection isFullView={false} />}
-              {activeTab === 'devices' && <DevicesSection isFullView={false} />}
-              {activeTab === 'guide' && <GuideSection isFullView={false} />}
-              {activeTab === 'faq' && <FAQSection isFullView={false} />}
-              {['refund', 'disclaimer', 'terms', 'privacy', 'cookie', 'dmca'].includes(activeTab) && <PolicySection policyId={activeTab} />}
-            </div>
-          )}
-        </Suspense>
+        {activeTab === 'home' ? (
+          <div className="animate-fade-in-up">
+            <HeroSection setActiveTab={handleTabChange} />
+            <PricingSection isFullView={true} />
+            <FeaturesSection isFullView={true} />
+            <DevicesSection isFullView={true} />
+            <GuideSection isFullView={true} />
+            <SportsSection isFullView={true} />
+            <FAQSection isFullView={true} />
+            <FinalCTASection />
+          </div>
+        ) : (
+          <div key={activeTab} className="animate-fade-in-up">
+            {activeTab === 'pricing' && <PricingSection isFullView={false} />}
+            {activeTab === 'features' && <FeaturesSection isFullView={false} />}
+            {activeTab === 'devices' && <DevicesSection isFullView={false} />}
+            {activeTab === 'guide' && <GuideSection isFullView={false} />}
+            {activeTab === 'faq' && <FAQSection isFullView={false} />}
+            {['refund', 'disclaimer', 'terms', 'privacy', 'cookie', 'dmca'].includes(activeTab) && <PolicySection policyId={activeTab} />}
+          </div>
+        )}
       </main>
 
       <footer className="pt-20 pb-12 px-8 border-t border-white/10 bg-black/40 relative overflow-hidden">
