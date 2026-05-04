@@ -96,11 +96,13 @@ const HeroSection = ({ setActiveTab }) => {
         <div className="flex-1 relative">
           <div className="relative z-10 rounded-[3rem] overflow-hidden border-2 border-white/10 shadow-[0_0_50px_rgba(255,140,0,0.2)]">
              <img 
-               src="https://images.unsplash.com/photo-1593305841991-05c297ba4575?auto=format&fit=crop&q=80&w=800" 
+               src="https://images.unsplash.com/photo-1593305841991-05c297ba4575?auto=format&fit=crop&q=80&w=630" 
+               srcSet="https://images.unsplash.com/photo-1593305841991-05c297ba4575?auto=format&fit=crop&q=80&w=400 400w, https://images.unsplash.com/photo-1593305841991-05c297ba4575?auto=format&fit=crop&q=80&w=630 630w, https://images.unsplash.com/photo-1593305841991-05c297ba4575?auto=format&fit=crop&q=80&w=800 800w"
+               sizes="(max-width: 1024px) 100vw, 50vw"
                alt="IPTVPORTUGAL Streaming 4K 8K" 
                className="w-full h-auto" 
-               width="800" 
-               height="450" 
+               width="630" 
+               height="483" 
                fetchpriority="high"
              />
              <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-transparent to-transparent"></div>
@@ -229,7 +231,7 @@ const GuideSection = ({ isFullView }) => {
               <h3 className="text-2xl text-white font-bold">{step.title}</h3>
             </div>
             <ul className="space-y-5 text-slate-300">
-              {(step.items || []).map((item, j) => (<li key={j} className="flex gap-3 items-start"><ChevronRight size={18} className="text-slate-500 mt-1 flex-shrink-0" /> <span className="font-medium">{item}</span></li>))}
+              {(step.items || []).map((item, j) => (<li key={j} className="flex gap-3 items-start"><ChevronRight size={18} className="text-slate-400 mt-1 flex-shrink-0" /> <span className="font-medium">{item}</span></li>))}
             </ul>
           </div>
         ))}
@@ -385,8 +387,8 @@ const FinalCTASection = () => {
 const DeviceBox = ({ icon: Icon, title, desc, grad, mt, nmt }) => (
   <div className={`p-8 rounded-[2.5rem] glass flex flex-col gap-5 border-white/10 shadow-2xl relative group overflow-hidden ${mt ? 'mt-10' : ''} ${nmt ? '-mt-10' : ''}`}>
     <div className={`w-14 h-14 rounded-2xl ${grad} flex items-center justify-center text-white shadow-lg`}><Icon size={32} /></div>
-    <h3 className="text-xl font-bold text-white uppercase">{title}</h3>
-    <p className="text-xs text-slate-400 font-medium">{desc}</p>
+    <div className="text-xl font-bold text-white uppercase">{title}</div>
+    <p className="text-xs text-slate-300 font-medium">{desc}</p>
     <div className={`absolute inset-0 ${grad} opacity-0 group-hover:opacity-[0.03] transition-opacity`}></div>
   </div>
 );
@@ -405,7 +407,7 @@ const PricingCard = ({ price, duration, features, isPopular, delay, gradientClas
     <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} transition={{ delay }} viewport={{ once: true }} className={`relative p-8 rounded-[3rem] glass flex flex-col border-white/10 h-full transition-all duration-500 hover:scale-[1.02] ${isPopular ? 'border-white/30 scale-105 z-10 shadow-2xl' : ''}`}>
       {isPopular && <div className={`absolute -top-4 left-1/2 -translate-x-1/2 px-4 py-1 ${gradientClass} text-white text-[10px] font-black uppercase tracking-[0.2em] rounded-full shadow-lg`}>Best Value</div>}
       <div className="mb-8">
-        <p className="text-slate-400 font-bold text-xs uppercase tracking-widest mb-2">{duration}</p>
+        <p className="text-slate-300 font-bold text-xs uppercase tracking-widest mb-2">{duration}</p>
         <div className="flex items-baseline gap-1"><span className="text-4xl font-black text-white">{t('pricing.currency')}{price}</span></div>
       </div>
       <div className="space-y-4 mb-10 flex-grow">
@@ -609,7 +611,7 @@ function App() {
             <p className="text-slate-300 max-w-md leading-relaxed text-lg font-medium italic">
               "Providing Ultra HD streaming experiences with unmatched server stability for the Portuguese market since 2018."
             </p>
-            <div className="mt-8 flex items-center gap-4 text-slate-400 font-bold text-xs uppercase tracking-widest">
+            <div className="mt-8 flex items-center gap-4 text-slate-300 font-bold text-xs uppercase tracking-widest">
               <div className="flex -space-x-2">
                  <div className="w-8 h-8 rounded-full grad-pink-orange border-2 border-black flex items-center justify-center text-[8px] font-black">4K</div>
                  <div className="w-8 h-8 rounded-full grad-aqua-turquoise border-2 border-black flex items-center justify-center text-[8px] font-black">8K</div>
@@ -620,8 +622,8 @@ function App() {
           </div>
           
           <div>
-            <h4 className="text-white text-xl font-black mb-8 uppercase tracking-widest border-b border-orange-500/30 pb-2 w-fit">{t('footer.quick_links')}</h4>
-            <ul className="space-y-4 text-slate-400 font-bold uppercase text-[11px] tracking-widest">
+            <h2 className="text-white text-xl font-black mb-8 uppercase tracking-widest border-b border-orange-500/30 pb-2 w-fit">{t('footer.quick_links')}</h2>
+            <ul className="space-y-4 text-slate-300 font-bold uppercase text-[11px] tracking-widest">
               <li><button onClick={() => handleTabChange('home')} className="hover:text-orange-400 transition-colors flex items-center gap-2"><ChevronRight size={14} /> {t('nav.home')}</button></li>
               <li><button onClick={() => handleTabChange('pricing')} className="hover:text-orange-400 transition-colors flex items-center gap-2"><ChevronRight size={14} /> {t('nav.pricing')}</button></li>
               <li><button onClick={() => handleTabChange('features')} className="hover:text-orange-400 transition-colors flex items-center gap-2"><ChevronRight size={14} /> {t('nav.features')}</button></li>
@@ -630,8 +632,8 @@ function App() {
           </div>
 
           <div>
-            <h4 className="text-white text-xl font-black mb-8 uppercase tracking-widest border-b border-orange-500/30 pb-2 w-fit">{t('footer.legal')}</h4>
-            <ul className="space-y-4 text-slate-400 font-bold uppercase text-[11px] tracking-widest">
+            <h2 className="text-white text-xl font-black mb-8 uppercase tracking-widest border-b border-orange-500/30 pb-2 w-fit">{t('footer.legal')}</h2>
+            <ul className="space-y-4 text-slate-300 font-bold uppercase text-[11px] tracking-widest">
               <li><button onClick={() => handleTabChange('refund')} className="hover:text-orange-400 transition-colors flex items-center gap-2"><RefreshCcw size={14} /> Refund Policy</button></li>
               <li><button onClick={() => handleTabChange('terms')} className="hover:text-orange-400 transition-colors flex items-center gap-2"><FileText size={14} /> Terms of Use</button></li>
               <li><button onClick={() => handleTabChange('privacy')} className="hover:text-orange-400 transition-colors flex items-center gap-2"><Lock size={14} /> Privacy Policy</button></li>
@@ -641,12 +643,12 @@ function App() {
           </div>
         </div>
 
-        <div className="max-w-7xl mx-auto pt-10 border-t border-white/5 flex flex-col md:flex-row items-center justify-between gap-8 text-slate-500 text-[10px] font-black uppercase tracking-widest text-center">
+        <div className="max-w-7xl mx-auto pt-10 border-t border-white/5 flex flex-col md:flex-row items-center justify-between gap-8 text-slate-300 text-[10px] font-black uppercase tracking-widest text-center">
           <div className="flex items-center gap-6">
              <p>© 2026 IPTVPORTUGAL. {t('footer.rights')}</p>
              <div className="flex items-center gap-2">
                <div className="w-2 h-2 rounded-full bg-green-500"></div>
-               <span className="text-green-500/70">Server Status: Online</span>
+               <span className="text-green-400">Server Status: Online</span>
              </div>
           </div>
           <div className="flex gap-10 items-center">
