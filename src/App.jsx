@@ -210,7 +210,12 @@ const Navbar = ({ activeTab, setActiveTab }) => {
 // --- Main App ---
 
 function App() {
-  const [activeTab, setActiveTab] = useState('home');
+  const getInitialTab = () => {
+    const path = window.location.pathname.replace('/', '');
+    const validTabs = ['home', 'pricing', 'features', 'devices', 'guide', 'faq', 'refund', 'disclaimer', 'terms', 'privacy', 'cookie', 'dmca'];
+    return validTabs.includes(path) ? path : 'home';
+  };
+  const [activeTab, setActiveTab] = useState(getInitialTab);
   const { t } = useTranslation();
 
   const getMetaData = () => {
@@ -234,6 +239,7 @@ function App() {
 
   const handleTabChange = (id) => {
     setActiveTab(id);
+    window.history.pushState({}, '', id === 'home' ? '/' : `/${id}`);
     window.scrollTo(0, 0);
   };
 
