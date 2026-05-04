@@ -72,17 +72,17 @@ const HeroSection = ({ setActiveTab }) => {
   return (
     <section className="pt-40 pb-12 px-6 min-h-[80vh] flex items-center relative overflow-hidden">
       <div className="max-w-7xl mx-auto flex flex-col lg:flex-row items-center gap-16 relative z-10">
-        <div className="flex-1 text-center lg:text-left">
-          <motion.div initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} className="inline-flex items-center gap-2 px-5 py-2 rounded-full bg-white/5 text-white border border-white/10 mb-10 shadow-xl">
+        <div className="flex-1 text-center lg:text-left animate-fade-in-up">
+          <div className="inline-flex items-center gap-2 px-5 py-2 rounded-full bg-white/5 text-white border border-white/10 mb-10 shadow-xl">
             <Flame size={16} className="text-orange-500" />
             <span className="text-xs font-black uppercase tracking-[0.2em]">{t('hero.badge')}</span>
-          </motion.div>
-          <motion.h1 initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.1 }} className="text-5xl lg:text-[5.5rem] font-black mb-8 leading-[1] text-white tracking-tight uppercase">
+          </div>
+          <h1 className="text-5xl lg:text-[5.5rem] font-black mb-8 leading-[1] text-white tracking-tight uppercase">
             <Trans i18nKey="hero.title">Channels in <span className="text-grad-pink-orange">4K & 8K</span> Without Compromise.</Trans>
-          </motion.h1>
-          <motion.p initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.2 }} className="text-xl text-slate-200 mb-12 max-w-2xl mx-auto lg:mx-0 leading-relaxed font-medium">
+          </h1>
+          <p className="text-xl text-slate-200 mb-12 max-w-2xl mx-auto lg:mx-0 leading-relaxed font-medium">
             {t('hero.subtitle')}
-          </motion.p>
+          </p>
           <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-5">
             <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer" className="btn-primary w-full sm:w-auto px-10 py-5 text-lg uppercase tracking-wider">
               <MessageCircle size={24} /> {t('hero.cta')}
