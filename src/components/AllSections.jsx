@@ -56,7 +56,7 @@ const Accordion = ({ title, content, i }) => {
         <span className="font-bold text-lg text-white/90 group-hover:text-white transition-colors">{title}</span>
         <div className={`w-8 h-8 rounded-full ${grads[i % grads.length]} flex items-center justify-center text-white transition-transform ${isOpen ? 'rotate-180' : ''}`}>{isOpen ? <Minus size={16} /> : <Plus size={16} />}</div>
       </button>
-      <AnimatePresence>{isOpen && (<motion.div initial={{ height: 0, opacity: 0 }} animate={{ height: 'auto', opacity: 1 }} exit={{ height: 0, opacity: 0 }} className="overflow-hidden"><p className="pb-6 text-slate-300 leading-relaxed font-medium">{content}</p></motion.div>)}</AnimatePresence>
+      <AnimatePresence>{isOpen && (<motion.div initial={{ height: 0, opacity: 0 }} animate={{ height: 'auto', opacity: 1 }} exit={{ height: 0, opacity: 0 }} className="overflow-hidden"><p className="pb-6 text-slate-300 leading-relaxed font-medium whitespace-pre-line">{content}</p></motion.div>)}</AnimatePresence>
     </div>
   );
 };
@@ -294,7 +294,7 @@ export const PolicySection = ({ policyId }) => {
         {contentSafe.map((section, idx) => (
           <div key={idx} className="space-y-4">
              <h2 className="text-2xl font-black text-white uppercase tracking-tight border-l-4 border-orange-500 pl-4">{section.h}</h2>
-             <p className="text-slate-300 text-lg leading-relaxed font-medium">{section.p}</p>
+             <p className="text-slate-300 text-lg leading-relaxed font-medium whitespace-pre-line">{section.p}</p>
           </div>
         ))}
         <div className="pt-8 border-t border-white/5 text-sm italic opacity-60 text-center">
