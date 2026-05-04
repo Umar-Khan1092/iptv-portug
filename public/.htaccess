@@ -21,6 +21,9 @@
   RewriteRule ^ index.html [QSA,L]
 </IfModule>
 
+# Fallback: If rewrite fails, serve index.html for 404 errors
+ErrorDocument 404 /index.html
+
 # =====================================================
 # Performance: Enable Gzip Compression
 # =====================================================
