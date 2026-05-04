@@ -1,8 +1,14 @@
 # =====================================================
-# IPTV Portugal - SPA Routing Fix for IONOS Apache
+# IPTV Portugal - SPA Routing Fix for IONOS (Apache & IIS)
 # =====================================================
 
-# Enable URL rewriting
+# Security: Prevent .htaccess from being downloaded
+<Files ".htaccess">
+  Order Allow,Deny
+  Deny from all
+</Files>
+
+# Enable URL rewriting (Apache)
 <IfModule mod_rewrite.c>
   RewriteEngine On
   RewriteBase /
