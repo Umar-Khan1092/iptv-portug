@@ -96,9 +96,7 @@ const HeroSection = ({ setActiveTab }) => {
         <div className="flex-1 relative">
           <div className="relative z-10 rounded-[3rem] overflow-hidden border-2 border-white/10 shadow-[0_0_50px_rgba(255,140,0,0.2)]">
              <img 
-               src="https://images.unsplash.com/photo-1593305841991-05c297ba4575?auto=format&fit=crop&q=80&w=630" 
-               srcSet="https://images.unsplash.com/photo-1593305841991-05c297ba4575?auto=format&fit=crop&q=80&w=400 400w, https://images.unsplash.com/photo-1593305841991-05c297ba4575?auto=format&fit=crop&q=80&w=630 630w, https://images.unsplash.com/photo-1593305841991-05c297ba4575?auto=format&fit=crop&q=80&w=800 800w"
-               sizes="(max-width: 1024px) 100vw, 50vw"
+               src="https://images.unsplash.com/photo-1593305841991-05c297ba4575?auto=format,compress&fit=crop&q=60&w=630"
                alt="IPTVPORTUGAL Streaming 4K 8K" 
                className="w-full h-auto" 
                width="630" 
@@ -283,7 +281,7 @@ const SportsSection = ({ isFullView }) => {
         <div className="flex-1 grid grid-cols-2 gap-6">
           <div className="space-y-6">
             <img 
-              src="https://images.unsplash.com/photo-1508098682722-e99c43a406b2?auto=format&fit=crop&q=80&w=600" 
+              src="https://images.unsplash.com/photo-1508098682722-e99c43a406b2?auto=format,compress&fit=crop&q=60&w=600" 
               className="rounded-[2.5rem] h-72 w-full object-cover shadow-2xl border-2 border-white/5" 
               alt="Sports Live Action" 
               width="600" 
@@ -295,7 +293,7 @@ const SportsSection = ({ isFullView }) => {
           <div className="space-y-6 pt-12">
             <div className="h-40 rounded-[2.5rem] glass flex items-center justify-center border-white/10 shadow-2xl"><PlayCircle size={64} className="text-orange-500" /></div>
             <img 
-              src="https://images.unsplash.com/photo-1540747913346-19e32dc3e97e?auto=format&fit=crop&q=80&w=600" 
+              src="https://images.unsplash.com/photo-1540747913346-19e32dc3e97e?auto=format,compress&fit=crop&q=60&w=600" 
               className="rounded-[2.5rem] h-72 w-full object-cover shadow-2xl border-2 border-white/5" 
               alt="Stadium Arena" 
               width="600" 
