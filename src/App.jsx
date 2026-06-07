@@ -1,4 +1,6 @@
 import React, { useState, useEffect } from 'react';
+import Blogs from './components/Blogs';
+import BlogDetail from './components/BlogDetail';
 import { Helmet } from 'react-helmet-async';
 import { 
   CheckCircle2, 
@@ -139,6 +141,7 @@ const Navbar = ({ activeTab, setActiveTab }) => {
     { id: 'devices', label: t('nav.devices') },
     { id: 'guide', label: t('nav.guide') },
     { id: 'faq', label: t('nav.faq') },
+    { id: 'blogs', label: 'Blogs' },
   ];
 
   const handleNavClick = (id) => {
@@ -212,7 +215,7 @@ const Navbar = ({ activeTab, setActiveTab }) => {
 function App() {
   const getInitialTab = () => {
     const path = window.location.pathname.replace('/', '');
-    const validTabs = ['home', 'pricing', 'features', 'devices', 'guide', 'faq', 'refund', 'disclaimer', 'terms', 'privacy', 'cookie', 'dmca'];
+    const validTabs = ['home', 'pricing', 'features', 'devices', 'guide','blogs', 'faq', 'refund', 'disclaimer', 'terms', 'privacy', 'cookie', 'dmca'];
     return validTabs.includes(path) ? path : 'home';
   };
   const [activeTab, setActiveTab] = useState(getInitialTab);
@@ -281,6 +284,7 @@ function App() {
             {activeTab === 'devices' && <DevicesSection isFullView={false} />}
             {activeTab === 'guide' && <GuideSection isFullView={false} />}
             {activeTab === 'faq' && <FAQSection isFullView={false} />}
+            {activeTab === 'blogs' && <Blogs />}
             {['refund', 'disclaimer', 'terms', 'privacy', 'cookie', 'dmca'].includes(activeTab) && <PolicySection policyId={activeTab} />}
           </div>
         )}
