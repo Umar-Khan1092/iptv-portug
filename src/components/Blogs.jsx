@@ -1,9 +1,19 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import blogs from "../blogs";
 import BlogCard from "./BlogCard";
 
-const Blogs = () => {
+const Blogs = ({ activeTab, setActiveTab }) => {
   const [selectedBlog, setSelectedBlog] = useState(null);
+
+  useEffect(() => {
+    if (activeTab && activeTab.startsWith('blogs/')) {
+      const slug = activeTab.split('/')[1];
+      const foundBlog = blogs.find(b => b.slug === slug);
+      setSelectedBlog(foundBlog || null);
+    } else {
+      setSelectedBlog(null);
+    }
+  }, [activeTab]);
 
   if (selectedBlog) {
     return (
@@ -11,7 +21,7 @@ const Blogs = () => {
         <div className="max-w-4xl mx-auto px-4">
 
           <button
-            onClick={() => setSelectedBlog(null)}
+            onClick={() => setActiveTab('blogs')}
             className="mb-8 text-orange-500 font-bold hover:text-orange-400"
           >
             ← Back to Blogs
@@ -55,7 +65,7 @@ const Blogs = () => {
             <BlogCard
               key={blog.id}
               blog={blog}
-              onReadMore={setSelectedBlog}
+              onReadMore={() => setActiveTab(`blogs/${blog.slug}`)}
             />
           ))}
         </div>
