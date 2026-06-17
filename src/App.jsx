@@ -214,7 +214,8 @@ const Navbar = ({ activeTab, setActiveTab }) => {
 
 function App() {
   const getInitialTab = () => {
-    const path = window.location.pathname.replace('/', '');
+    const path = window.location.pathname.replace(/^\/+/, '');
+    if (path.startsWith('blogs/')) return path;
     const validTabs = ['home', 'pricing', 'features', 'devices', 'guide','blogs', 'faq', 'refund', 'disclaimer', 'terms', 'privacy', 'cookie', 'dmca'];
     return validTabs.includes(path) ? path : 'home';
   };
@@ -284,7 +285,7 @@ function App() {
             {activeTab === 'devices' && <DevicesSection isFullView={false} />}
             {activeTab === 'guide' && <GuideSection isFullView={false} />}
             {activeTab === 'faq' && <FAQSection isFullView={false} />}
-            {activeTab === 'blogs' && <Blogs />}
+            {(activeTab === 'blogs' || activeTab.startsWith('blogs/')) && <Blogs activeTab={activeTab} setActiveTab={handleTabChange} />}
             {['refund', 'disclaimer', 'terms', 'privacy', 'cookie', 'dmca'].includes(activeTab) && <PolicySection policyId={activeTab} />}
           </div>
         )}
