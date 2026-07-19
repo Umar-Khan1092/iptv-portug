@@ -1,4 +1,11 @@
 {
+  "redirects": [
+    {
+      "source": "/",
+      "destination": "/iptv",
+      "permanent": true
+    }
+  ],
   "rewrites": [
     {
       "source": "/(.*)",
