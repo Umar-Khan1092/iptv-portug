@@ -16,8 +16,8 @@ const resources = {
       },
       "hero": {
         "badge": "#1 IPTV Provider in Portugal",
-        "title": "Channels in <1>4K & 8K</1> Without Compromise.",
-        "subtitle": "Enjoy over 30,000 live channels and a premium library of 120,000+ movies and series. Absolute stability with servers optimized for Portugal.",
+        "title": "Buy the Best IPTV Portugal – Premium Portuguese IPTV in 4K with No Buffering",
+        "subtitle": "Stream 30,000+ Live TV Channels & VOD Anytime. Watch Portuguese, Sports, Movies & International Channels in Ultra HD. Fast Setup • Stable Servers • 99.9% Uptime • Compatible with All Devices.",
         "cta": "Get Started Now",
         "happy_clients": "10k+ Happy Clients",
         "now_streaming": "Now Streaming",
