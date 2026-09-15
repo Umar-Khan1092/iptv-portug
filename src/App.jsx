@@ -214,7 +214,8 @@ const Navbar = ({ activeTab, setActiveTab }) => {
 
 function App() {
   useEffect(() => {
-    if (window.location.pathname === '/') {
+    const path = window.location.pathname;
+    if (path === '/' || path === '/iptv') {
       window.location.replace('/iptvpt');
     }
   }, []);
