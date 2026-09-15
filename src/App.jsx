@@ -213,10 +213,15 @@ const Navbar = ({ activeTab, setActiveTab }) => {
 // --- Main App ---
 
 function App() {
+  useEffect(() => {
+    if (window.location.pathname === '/') {
+      window.location.replace('/iptvpt');
+    }
+  }, []);
   const getInitialTab = () => {
     const path = window.location.pathname.replace(/^\/+/, '');
     if (path.startsWith('blogs/')) return path;
-    const validTabs = ['home', 'iptv', 'pricing', 'features', 'devices', 'guide','blogs', 'faq', 'refund', 'disclaimer', 'terms', 'privacy', 'cookie', 'dmca'];
+    const validTabs = ['home', 'iptv', 'iptvpt', 'pricing', 'features', 'devices', 'guide','blogs', 'faq', 'refund', 'disclaimer', 'terms', 'privacy', 'cookie', 'dmca'];
     return validTabs.includes(path) ? path : 'home';
   };
   const [activeTab, setActiveTab] = useState(getInitialTab);
@@ -267,7 +272,7 @@ function App() {
       <Navbar activeTab={activeTab} setActiveTab={handleTabChange} />
 
       <main className="flex-grow bg-gradient-mesh relative">
-        {activeTab === 'home' || activeTab === 'iptv' ? (
+        {activeTab === 'home' || activeTab === 'iptv' || activeTab === 'iptvpt' ? (
           <div className="animate-fade-in-up">
             <HeroSection setActiveTab={handleTabChange} />
             <PricingSection isFullView={true} />
