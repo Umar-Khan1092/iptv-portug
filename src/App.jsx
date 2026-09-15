@@ -248,7 +248,7 @@ function App() {
 
   const handleTabChange = (id) => {
     setActiveTab(id);
-    window.history.pushState({}, '', id === 'home' ? '/iptv' : `/${id}`);
+    window.history.pushState({}, '', id === 'home' ? '/iptvpt' : `/${id}`);
     window.scrollTo(0, 0);
   };
 
