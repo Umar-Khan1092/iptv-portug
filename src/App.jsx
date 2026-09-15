@@ -39,8 +39,8 @@ import {
 import { useTranslation, Trans } from 'react-i18next';
 
 // --- Constants ---
-const WHATSAPP_NUMBER = "+44 7988 579524";
-const WHATSAPP_URL = "https://wa.me/447988579524?text=Hi%20iptvportugal.pro";
+const WHATSAPP_NUMBER = "+44 7412 300833";
+const WHATSAPP_URL = "https://wa.me/447412300833?text=Hi%20iptvportugal.pro";
 
 // --- SEO Schema Component ---
 const SchemaMarkup = () => {
